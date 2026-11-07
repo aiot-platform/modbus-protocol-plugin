@@ -62,6 +62,7 @@ jobs:
           file: ./Dockerfile
           platforms: ${{ github.event_name == 'push' && 'linux/amd64' || 'linux/amd64,linux/arm64' }}
           push: true
+          provenance: false
           tags: |
             ${{ env.ACR }}/modbus-protocol-plugin:${{ env.VERSION }}
   deploy:
